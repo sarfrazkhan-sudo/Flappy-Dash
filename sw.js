@@ -10,7 +10,6 @@ const FILES_TO_CACHE = [
   './icon-512.png',
   './icon-512-maskable.png',
   './screenshot-narrow.png',
-  './screenshot-wide.png'
 ];
 
 self.addEventListener('install', (event) => {
