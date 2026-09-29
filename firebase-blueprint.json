@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "LeaderboardEntry": {
+      "title": "Leaderboard Entry",
+      "description": "A player's submitted high score entry for the global leaderboard",
+      "type": "object",
+      "properties": {
+        "playerName": {
+          "type": "string",
+          "description": "Player nickname displayed on the global leaderboard",
+          "minLength": 1,
+          "maxLength": 18
+        },
+        "score": {
+          "type": "integer",
+          "description": "Final score achieved in the run"
+        },
+        "cosmetic": {
+          "type": "string",
+          "description": "Cosmetic accessory equipped during the run",
+          "enum": ["none", "crown", "goggles", "crest", "halo"]
+        },
+        "timeOfDay": {
+          "type": "string",
+          "description": "Time of day phase reached when run ended",
+          "enum": ["Sunrise", "Midday", "Sunset", "Night"]
+        },
+        "hasDailyMedal": {
+          "type": "boolean",
+          "description": "Whether the player completed today's daily mission"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of score submission"
+        }
+      },
+      "required": ["playerName", "score", "cosmetic", "timeOfDay", "hasDailyMedal", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/leaderboard/{entryId}": {
+      "schema": {
+        "$ref": "#/entities/LeaderboardEntry"
+      },
+      "description": "Public global leaderboard high scores collection"
+    }
+  }
+}

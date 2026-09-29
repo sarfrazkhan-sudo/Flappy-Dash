@@ -1,0 +1,6 @@
+{
+  "name": "Flappy Dash",
+  "description": "A fun and addictive Flappy Bird arcade game built purely with HTML5 Canvas 2D and Web Audio API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
